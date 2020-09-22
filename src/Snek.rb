@@ -1,8 +1,8 @@
 require "ruby2d"
 
 class Snek
-
-	def initialize board_start_x, board_start_y, board_width, board_height, grid_size
+	attr_accessor :head
+	def initialize board_start_x, board_start_y, board_width, board_height, grid_size, game
 		@body = [[0,0],[1,0],[2,0]].reverse
 		@head = @body.first
 		@vel = [0,1]
@@ -10,6 +10,8 @@ class Snek
 		@board_start = [board_start_x, board_start_y]
 		@board_dimensions = [board_width, board_height]
 		@grown = false
+		@food = game.food
+		@game = game
 	end
 	
 	def get_coordinates body_piece
@@ -38,11 +40,6 @@ class Snek
 		self.thrust
 		@body.push(last)
 		@body.shift
-		
-
-
-
-
 
 	end
 
@@ -50,7 +47,7 @@ class Snek
 		if @head[0] >= 0 && @head[1] >= 0 and @head[0] < @board_dimensions[0]/@grid_size and @head[1] < @board_dimensions[1]/@grid_size then
 			return true 
 		else
-			raise "out Of bounds"
+			@game.finish
 			return false
 		end
 	end
@@ -81,8 +78,7 @@ class Snek
 		end
 		
 		if @body.include? pos then
-			puts "dead"
-			raise "dead"
+			@game.finish
 			return false
 		else
 			return true
@@ -90,7 +86,17 @@ class Snek
 
 	end
 	
+	def grow
+		@body.push(@body.last)
+	end
+	
 	def grown?
 		@grown
 	end
+
+	def clean
+		@body = []
+	end
+
+
 end
