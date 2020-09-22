@@ -24,7 +24,7 @@ If you have not setup your ruby environment, well.
 
 
 ## Usage
-*as stated in the **Installation***
+each game has its own branch with it's executable
 
 <hr/> 
 
