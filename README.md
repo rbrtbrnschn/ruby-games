@@ -6,7 +6,7 @@ Sample Games, learning the language. <hr/> Games so far: Snake
 
 * [X] make a snake clone
 
-* [ ] finish snake clone
+* [X] finish snake clone (in snek branch)
 
 * [X] work with sprites
 
