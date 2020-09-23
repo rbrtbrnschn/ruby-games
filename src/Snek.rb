@@ -68,12 +68,24 @@ class Snek
 	def change_dir_possible? dir
 		case dir
 			when "w" then
+				if @vel == [0,1] then
+					return false
+				end
 				pos = [@head[0],@head[1]-1]
 			when "a" then
+				if @vel == [1,0] then
+					return false
+				end
 				pos = [@head[0]-1,@head[1]]
 			when "s" then
+				if @vel == [0,-1] then
+					return false
+				end
 				pos = [@head[0],@head[1]+1]
 			when "d" then
+				if @vel == [-1,0] then
+					return false
+				end
 				pos = [@head[0]+1,@head[1]]
 		end
 		
