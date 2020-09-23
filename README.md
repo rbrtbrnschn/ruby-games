@@ -6,7 +6,7 @@ Sample Games, learning the language. <hr/> Games so far: Snake
 
 * [X] make a snake clone
 
-* [ ] finish snake clone
+* [X] finish snake clone (in snek branch)
 
 * [X] work with sprites
 
@@ -24,7 +24,7 @@ If you have not setup your ruby environment, well.
 
 
 ## Usage
-*as stated in the **Installation***
+each game has its own branch with it's executable
 
 <hr/> 
 
